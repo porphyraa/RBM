@@ -13,13 +13,13 @@
     <a-scene>
         <!-- Assets -->
         <a-assets>
-            <img id="template" src="./Images/lt1.jpg">
+            <img id="bg" src="./Images/lt1.jpg">
 			<img id="arrow" src="./Images/arrow.png">
         </a-assets>
 
         <!-- Camera Object -->
-        <a-camera id="camera" look-controls="" wasd-controls-enabled="false" camera="active:true" 
-            rotation="0 0 0" position="0 0 0" 
+        <a-entity position="0 0 0" rotation="0 -186 0">
+            <a-camera id="camera" look-controls="" wasd-controls-enabled="false" camera="active:true" 
             scale="" visible="">
 
             <!-- Cursor -->
@@ -27,28 +27,40 @@
                 geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
                 material="color: white; shader: flat"
 
-                animation__fusing="property: geometry.radiusOuter; from: 0.050; to: 0.02; startEvents: fusing; easing: easeInQuad; dur: 1000"
-                animation__fusing2="property: geometry.radiusInner; from: 0.050; to: 0.01; startEvents: fusing; easing: easeInQuad; dur: 1000">
+                    animation__fusing="property: geometry.radiusOuter; from: 0.050; to: 0.010; startEvents: fusing; easing: easeInQuad; dur: 1000"
+                    animation__fusing2="property: geometry.radiusInner; from: 0.050; to: 0.005; startEvents: fusing; easing: easeInQuad; dur: 1000">
 
-            </a-entity>
-        </a-camera>
+                </a-entity>
+            </a-camera>
+        </a-entity>
 
         <!-- Background -->
-        <a-sky src="#template"></a-sky>
+        <a-sky src="#bg"></a-sky>
 
         <!-- Objects -->
 
-        <!-- Button 01 -->
-        <a-entity id="item001"> 
-            <a-image class="itemButton" src="#arrow" transparent="true"
-            position="-.3 -1 2" rotation="-90 170 0"  
-            hoverable="color:#db4035"
-            clickable="name:item001; target_url:lt1-1.html"
-            scale="" visible=""/>
+        <!-- Welcome Text -->
+        <a-entity id="welcome-text" position="-0.5 2 5" rotation="0 174 0">
+            <a-text font="kelsonsans" width="6" align="center" 
+                value="Virtual Tour Experience\nMuseum Mpu Purwa"
+                position="0 1 0" rotation="0 0 0">
+            </a-text>
 
-			 </--a-text class="itemText"
-            font="kelsonsans" value="Masuk" width="6" align="center"
-            position="0 0 0" rotation="0 0 0"/>
+            <a-text font="kelsonsans" width="6" align="center" 
+                value="Ikuti Panah\nUntuk Melanjutkan"
+                position="0 -2 0.5" rotation="-60 0 0">
+            </a-text>
+
+            <!-- Reference Block, Comment when unused -->
+            <!-- <a-plane color="#FFF" position="0 0 0" rotation="0 0 0"></a-plane> -->
+        </a-entity>
+
+        <!-- Ke Lantai 1 -->
+        <a-entity id="item001" position="-0.3 0 3" rotation="-90 174 0"> 
+            <a-image class="itemButton" src="#arrow" transparent="true"  
+            hoverable="color:#db4035"
+            clickable="name:Lantai 1; target_url:lt1-1.html"
+            scale="" visible=""/>
 				
             </a-entity>
         </a-entity>

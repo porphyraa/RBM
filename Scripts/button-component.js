@@ -43,3 +43,34 @@ AFRAME.registerComponent('clickable', {
     }
 });
 
+AFRAME.registerComponent('info-block', {
+    schema: {
+        name: {type: 'string', default: "nameless"},
+        target_id: {type: 'string', default: "unknown"}
+    },
+
+    init: function(){
+        var self = this;
+        var data = self.data;
+        var el = this.el;
+
+        var target = document.getElementById(data.target_id)
+
+        el.addEventListener('mouseenter', function () {
+            console.log("Aim to", data.name);
+        })
+
+        el.addEventListener('click', function () {
+            console.log("Show Object: ", data.target_id);
+            target.setAttribute("visible", true)
+        })
+
+        el.addEventListener('mouseleave', function () {
+            console.log("Hide Object: ", data.target_id);
+            target.setAttribute("visible", false)
+
+        })
+
+    }
+});
+
