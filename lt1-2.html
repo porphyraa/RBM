@@ -13,8 +13,15 @@
     <a-scene>
         <!-- Assets -->
         <a-assets>
-            <img id="template" src="./Images/lt1-2.jpg">
+            <img id="bg" src="./Images/lt1-2.jpg">
 			<img id="arrow" src="./Images/arrow.png">
+
+            <img id="mahaguru" src="./Images/Spesimen/SiwaMahaguru.JPG">
+            <img id="mahaguru-desc" src="./Images/Spesimen/SiwaMahaguru-desc.JPG">
+            <img id="nandiswara" src="./Images/Spesimen/Nandiswara.JPG">
+            <img id="nandiswara-desc" src="./Images/Spesimen/Nandiswara-desc.JPG">
+            <img id="tokohdewa" src="./Images/Spesimen/TokohDewa.JPG">
+            <img id="tokohdewa-desc" src="./Images/Spesimen/TokohDewa-desc.JPG">
         </a-assets>
 
         <!-- Camera Object -->
@@ -23,23 +30,56 @@
             scale="" visible="">
 
             <!-- Cursor -->
-            <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1" 
-                geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
-                material="color: white; shader: flat"
+                <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1" 
+                    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+                    material="color: white; shader: flat"
 
-                    animation__fusing="property: geometry.radiusOuter; from: 0.050; to: 0.010; startEvents: fusing; easing: easeInQuad; dur: 1000"
-                    animation__fusing2="property: geometry.radiusInner; from: 0.050; to: 0.005; startEvents: fusing; easing: easeInQuad; dur: 1000">
+                        animation__fusing="property: geometry.radiusOuter; from: 0.050; to: 0.010; startEvents: fusing; easing: easeInQuad; dur: 1000"
+                        animation__fusing2="property: geometry.radiusInner; from: 0.050; to: 0.005; startEvents: fusing; easing: easeInQuad; dur: 1000">
 
                 </a-entity>
+
+            <!-- HUD -->
+                <a-entity id="test-hud" position="0 0 -1" rotation="0 0 0" visible="false">
+                    <a-plane height="1.33" width="1" position="0.95 0 0" color="red"></a-plane>
+                    <a-plane height="1.33" width="1" position="-0.95 0 0" color="blue"></a-plane>
+                </a-entity>
+
+                <a-entity id="tokohdewa-hud" position="0 0 -1" rotation="0 0 0" visible="false">
+                    <a-plane height="1.33" width="1" position="0.95 0 0" color="red">
+                        <a-image src="#tokohdewa-desc" height="1.33" width="1"></a-image>
+                    </a-plane>
+                    <a-plane height="1.33" width="1" position="-0.95 0 0" color="blue">
+                        <a-image src="#tokohdewa" height="1.33" width="1"></a-image>
+                    </a-plane>
+                </a-entity>
+
+                <a-entity id="mahaguru-hud" position="0 0 -1" rotation="0 0 0" visible="false">
+                    <a-plane height="1.33" width="1" position="0.95 0 0" color="red">
+                        <a-image src="#mahaguru-desc" height="1.33" width="1"></a-image>
+                    </a-plane>
+                    <a-plane height="1.33" width="1" position="-0.95 0 0" color="blue">
+                        <a-image src="#mahaguru" height="1.33" width="1"></a-image>
+                    </a-plane>
+                </a-entity>
+
+                <a-entity id="nandiswara-hud" position="0 0 -1" rotation="0 0 0" visible="false">
+                    <a-plane height="1.33" width="1" position="0.95 0 0" color="red">
+                        <a-image src="#nandiswara-desc" height="1.33" width="1"></a-image>
+                    </a-plane>
+                    <a-plane height="1.33" width="1" position="-0.95 0 0" color="blue">
+                        <a-image src="#nandiswara" height="1.33" width="1"></a-image>
+                    </a-plane>
+                </a-entity>
+
             </a-camera>
         </a-entity>
 
         <!-- Background -->
-        <a-sky src="#template"></a-sky>
+        <a-sky src="#bg"></a-sky>
 
-        <!-- Objects -->
-
-        <!-- Button 01 -->
+        <!-- Navigasi -->
+        <!-- Ke Lantai 1 A -->
         <a-entity id="item001" position="0 0 0" rotation="90 165 0"> 
             
             <a-image class="itemButton" src="#arrow" transparent="true"
@@ -47,18 +87,60 @@
             hoverable="color:#db4035"
             clickable="name:Lantai 1 A; target_url:lt1-1.html">
             </a-image>
-			
-			</--a-text class="itemText"
-            font="kelsonsans" value="Go To Index" width="6" align="center"
-            position="0 1 -3" rotation="0 0 0"/>
+
+            <a-text font="kelsonsans" width="8" align="center" 
+                value="Lantai 1 A" color="white"
+                position="0 2.5 0" rotation="0 180 0">
+            </a-text>
 
             <!-- Reference Block, Comment when unused -->
             <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.2"></a-plane> -->
         </a-entity>
 
-        
-    </a-scene>
+        <!-- Spesimen -->
+        <!-- Spesimen Nandiswara -->
+        <a-entity id="spesimen001" position="-1.7 1.55 -0.4" rotation="0 -102 0"> 
+            
+			<a-plane class="itemInfo" opacity="0" color="red"
+                position="0 -0.05 0" rotation="0 180 0" width="0.45" height="0.95"
+                info-block="name:Nandiswara; target_id:nandiswara-hud">
+                <a-text value="Nandiswara" align="center" width="2" position="0 0.55 0"></a-text>
+            </a-plane>
 
+            <!-- Reference Block, Comment when unused -->
+            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.5"></a-plane> -->
+            <!-- <a-box></a-box> -->
+        </a-entity>
+
+        <!-- Spesimen Tokoh Dewa -->
+        <a-entity id="spesimen002" position="-1.7 1.55 -0.4" rotation="0 -102 0"> 
+            
+			<a-plane class="itemInfo" opacity="0" color="red" 
+                position="1.13 -0.1 -0.1" rotation="0 210 0" width="0.47" height="0.8"
+                info-block="name:Tokoh Dewa; target_id:tokohdewa-hud">
+                <a-text value="Tokoh Dewa" align="center" width="2" position="0 0.45 0"></a-text>
+            </a-plane>
+
+            <!-- Reference Block, Comment when unused -->
+            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.5"></a-plane> -->
+            <!-- <a-box></a-box> -->
+        </a-entity>
+
+        <!-- Spesimen Siwa Mahaguru -->
+        <a-entity id="spesimen003" position="-1.7 1.55 -0.4" rotation="0 -102 0"> 
+            
+			<a-plane class="itemInfo" opacity="0" color="red" 
+                position="-1.05 -0.09 0" rotation="0 150 0" width="0.45" height="0.83"
+                info-block="name:Siwa Mahaguru; target_id:mahaguru-hud">
+                <a-text value="Siwa Mahaguru" align="center" width="2" position="0 0.5 0"></a-text>
+            </a-plane>
+
+            <!-- Reference Block, Comment when unused -->
+            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.5"></a-plane> -->
+            <!-- <a-box></a-box> -->
+        </a-entity>
+
+    </a-scene>
 
 </body>
 

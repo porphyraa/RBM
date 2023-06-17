@@ -15,6 +15,9 @@
         <a-assets>
             <img id="bg" src="./Images/lt1-1.jpg">
 			<img id="arrow" src="./Images/arrow.png">
+
+            <img id="durgamahisa" src="./Images/Spesimen/DurgamahisaSuramardini.JPG">
+            <img id="durgamahisa-desc" src="./Images/Spesimen/DurgamahisaSuramardini-desc.JPG">
         </a-assets>
 
         <!-- Camera Object -->
@@ -23,22 +26,37 @@
             scale="" visible="">
 
             <!-- Cursor -->
-            <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1" 
-                geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
-                material="color: white; shader: flat"
+                <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1500" position="0 0 -1" 
+                    geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+                    material="color: white; shader: flat"
 
-                    animation__fusing="property: geometry.radiusOuter; from: 0.050; to: 0.010; startEvents: fusing; easing: easeInQuad; dur: 1000"
-                    animation__fusing2="property: geometry.radiusInner; from: 0.050; to: 0.005; startEvents: fusing; easing: easeInQuad; dur: 1000">
+                        animation__fusing="property: geometry.radiusOuter; from: 0.050; to: 0.010; startEvents: fusing; easing: easeInQuad; dur: 1000"
+                        animation__fusing2="property: geometry.radiusInner; from: 0.050; to: 0.005; startEvents: fusing; easing: easeInQuad; dur: 1000">
 
                 </a-entity>
+
+            <!-- HUD -->
+                <a-entity id="test-hud" position="0 0 -1" rotation="0 0 0" visible="false">
+                    <a-plane height="1.33" width="1" position="0.95 0 0" color="red"></a-plane>
+                    <a-plane height="1.33" width="1" position="-0.95 0 0" color="blue"></a-plane>
+                </a-entity>
+
+                <a-entity id="durgamahisa-hud" position="0 0 -1" rotation="0 0 0" visible="false">
+                    <a-plane height="1.33" width="1" position="0.95 0 0" color="red">
+                        <a-image src="#durgamahisa-desc" height="1.33" width="1"></a-image>
+                    </a-plane>
+                    <a-plane height="1.33" width="1" position="-0.95 0 0" color="blue">
+                        <a-image src="#durgamahisa" height="1.33" width="1"></a-image>
+                    </a-plane>
+                </a-entity>
+
             </a-camera>
         </a-entity>
 
         <!-- Background -->
         <a-sky src="#bg"></a-sky>
 
-        <!-- Objects -->
-
+        <!-- Navigasi -->
         <!-- Ke Lantai 1 B -->
         <a-entity id="item001" position="0 0 0" rotation="90 -42 0"> 
             
@@ -47,44 +65,63 @@
                 hoverable="color:#db4035"
                 clickable="name:Lantai 1 B; target_url:lt1-2.html">
             </a-image>
-			
-			</--a-text class="itemText"
-            font="kelsonsans" value="Go To Index" width="6" align="center"
-            position="0 1 -3" rotation="0 0 0"/>
+
+            <a-text font="kelsonsans" width="8" align="center" 
+                value="Lantai 1 B" color="white"
+                position="0 3 0" rotation="0 180 0">
+            </a-text>
 
             <!-- Reference Block, Comment when unused -->
-            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 0 0" width="0.2"></a-plane> -->
+            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="180 0 0" width="0.2"></a-plane> -->
         </a-entity>
         
         <!-- Ke Lantai 2 -->
         <a-entity id="item002" position="4.5 1 -4" rotation="0 135 0"> 
             <a-image class="itemButton" src="#arrow" transparent="true"
-                position="-0.2 1 3" rotation="0 0 0"
+                position="-0.2 1.3 2" rotation="0 0 0"
                 hoverable="color:#db4035"
                 clickable="name:Lantai 2; target_url:lt2.html">
             </a-image>
 			
-			</--a-text class="itemText"
-            font="kelsonsans" value="Go To Index" width="6" align="center"
-            position="0 1 -3" rotation="0 0 0"/>
+			<a-text font="kelsonsans" width="8" align="center" 
+                value="Lantai 2" color="white"
+                position="-0.1 0.5 0" rotation="0 180 0">
+            </a-text>
 
             <!-- Reference Block, Comment when unused -->
-            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="1"></a-plane> -->
+            <!-- <a-plane opacity="0.3" color="#FFF" position="0 0 0.01" rotation="0 180 0" width="1"></a-plane> -->
         </a-entity>
         
+        <!-- Ke Luar Museum -->
         <a-entity id="item003" position="0 0 0" rotation="90 140 0"> 
             <a-image class="itemButton" src="#arrow" transparent="true"
                 position="-0.8 3 0" rotation="0 0 -45"
                 hoverable="color:#db4035"
                 clickable="name:Luar Museum; target_url:index.html">
             </a-image>
-			
-			</--a-text class="itemText"
-            font="kelsonsans" value="Go To Index" width="6" align="center"
-            position="0 1 -3" rotation="0 0 0"/>
+
+            <a-text font="kelsonsans" width="6" align="center" 
+                value="Keluar\nMuseum" color="white"
+                position="-0.8 2 0" rotation="0 180 0">
+            </a-text>
 
             <!-- Reference Block, Comment when unused -->
             <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.2"></a-plane> -->
+        </a-entity>
+
+        <!-- Spesimen -->
+        <!-- Spesimen Durgamahisa Suramardini -->
+        <a-entity id="spesimen001" position="-3.1 0 1.3" rotation="0 100 0"> 
+            
+			<a-plane class="itemInfo" opacity="0" color="red"
+                position="0.7 0.55 -0.2" rotation="0 0 0" width="0.82" height="1.65"
+                info-block="name:Durgamahisa Suramardini; target_id:durgamahisa-hud">
+                <a-text value="Durgamahisa Suramardini" align="center" width="3" position="0 0.89 0"></a-text>
+            </a-plane>
+
+            <!-- Reference Block, Comment when unused -->
+            <!-- <a-plane color="white" position="0 0 0.01" rotation="0 0 0" width="0.5"></a-plane> -->
+            <!-- <a-box></a-box> -->
         </a-entity>
 
     </a-scene>

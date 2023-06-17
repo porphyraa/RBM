@@ -32,11 +32,11 @@ AFRAME.registerComponent('clickable', {
         var el = this.el;
 
         el.addEventListener('mouseenter', function () {
-            //console.log("Aim to", data.name);
+            console.log("Aim to", data.name);
         })
 
         el.addEventListener('click', function () {
-            //console.log("Go to", data.target_url);
+            console.log("Go to", data.target_url);
             location.replace(data.target_url);
         })
 

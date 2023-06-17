@@ -37,42 +37,43 @@
         <!-- Background -->
         <a-sky src="#template"></a-sky>
 
-        <!-- Objects -->
-
-        <!-- Button 01 -->
-		<a-entity id="item001" position="0 0 0" rotation="90 150 0"> 
+        <!-- Navigasi -->
+        <!-- Ke Lantai 2 Kiri B -->
+		<a-entity id="item001" position="0 0 0" rotation="-90 150 180"> 
             
             <a-image class="itemButton" src="#arrow" transparent="true"
-            position="0 5 0" rotation="0 0 0" 
-            hoverable="color:#db4035"
-            clickable="name:Lantai 2 Kiri B; target_url:lt2-l2.html">
+                position="0 4.5 0" rotation="0 0 0" 
+                hoverable="color:#db4035"
+                clickable="name:Lantai 2 Kiri B; target_url:lt2-l2.html">
             </a-image>
 			
-			</--a-text class="itemText"
-            font="kelsonsans" value="Go To Index" width="6" align="center"
-            position="0 1 -3" rotation="0 0 0"/>
+			<a-text font="kelsonsans" width="8" align="center" 
+                value="Lantai 2\nKiri B" color="white"
+                position="0 3 0" rotation="0 0 0">
+            </a-text>
 
             <!-- Reference Block, Comment when unused -->
-            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.2"></a-plane> -->
+            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 0 0" width="0.2"></a-plane> -->
         </a-entity>
 		
-        <a-entity id="item002" position="0 0 0" rotation="90 -28 0"> 
+        <!-- Ke Tangga Lantai 2 -->
+        <a-entity id="item002" position="0 0 0" rotation="-90 -28 180"> 
             
             <a-image class="itemButton" src="#arrow" transparent="true"
-            position="-2 2 0" rotation="0 0 0" 
-            hoverable="color:#db4035"
-            clickable="name:Lantai 2; target_url:lt2.html">
+                position="2 2 0" rotation="0 0 0" 
+                hoverable="color:#db4035"
+                clickable="name:Lantai 2; target_url:lt2.html">
             </a-image>
 			
-			</--a-text class="itemText"
-            font="kelsonsans" value="Go To Index" width="6" align="center"
-            position="0 1 -3" rotation="0 0 0"/>
+			<a-text font="kelsonsans" width="6" align="center" 
+                value="Tangga" color="white"
+                position="1.5 1.5 0" rotation="0 0 -45">
+            </a-text>
 
             <!-- Reference Block, Comment when unused -->
-            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 180 0" width="0.2"></a-plane> -->
+            <!-- <a-plane color="#FFF" position="0 0 0.01" rotation="0 0 0" width="0.2"></a-plane> -->
         </a-entity>
     </a-scene>
-
 
 </body>
 
